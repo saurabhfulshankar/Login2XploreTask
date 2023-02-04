@@ -146,12 +146,13 @@ function getRecord() {
     });
     var resultObj = executeCommand(getReqStr, "http://api.login2explore.com:5577", "/api/irl");
     var resultString = JSON.stringify(resultObj);
+    console.log(resultString);
     return resultObj;
 }
 
 function checkPrimaryKey(){
     var jsonStr = getRecord();
-    if(jsonStr.data==""){
+    if(jsonStr.data=="" || jsonStr.status=="400"){
         document.getElementById("update").disabled = true;
         document.getElementById("save").disabled = false;
         document.getElementById("update").style.backgroundColor ="#808080";
