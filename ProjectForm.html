@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="ProjectForm.js"></script>
+</head>
+
+<body>
+    <div class="outer-box">
+        <div class="inner-box">
+            <header class="header">
+                <h1>Project Information</h1>
+            </header>
+            <main class="body">
+                <span id="message"></span>
+                <form action="submit">
+                    <p>
+                        <label>Project ID</label>
+                        <input type="text" id="Id" required onchange="checkPrimaryKey()">
+                    </p>
+                    <p>
+                        <label>Project Name</label>
+                        <input type="text" id="name" required>
+                    </p>
+                    <p>
+                        <label>Assigned to</label>
+                        <input type="text" id="assigned" required>
+                    </p>
+                    <p>
+                        <label>Assignment Date</label>
+                        <input type="date" id="assigned_date" required>
+                    </p>
+                    <p>
+                        <label>Deadline</label>
+                        <input type="date" id="deadline" required>
+                    </p>
+                    <div class="buttons">
+                        <p>
+                            <input type="submit" class="btn" id="save" value="Save" onclick="saveProject()">
+                        </p>
+                        <p>
+                            <input type="submit" class="btn" id="update" value="Update" onclick="updateProject()">
+                        </p>
+                        <p>
+                            <input type="submit" class="btn" value="Reset" onclick="resetForm()">
+                        </p>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
